@@ -1,14 +1,35 @@
 #main {
   background-image: url("../assets/hero.webp");
   background-size: cover;
-  background-position: center;
-  background-position-y: -7.5em;
-  -webkit-filter: brightness(0.9);
-  filter: brightness(0.9);
+  -webkit-filter: brightness(0.95);
+  filter: brightness(0.95);
 }
 
 #layer {
   background: linear-gradient(to right, black, transparent);
   opacity: 0.5;
   z-index: -1;
+}
+
+@media (max-width: 570px) {
+  #main {
+    background-position: center;
+    background-position-y: 0em;
+    background-position-x: -27em;
+  }
+}
+
+@media (min-width: 570px) {
+  #main {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  #main {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: -7.5em;
+  }
 }

@@ -3,7 +3,7 @@ const Logo = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1094 275"
-      className="w-[9em] cursor-pointer"
+      className="w-[7.5em] md:w-[9em] cursor-pointer"
     >
       <path
         fill="#FFF"
