@@ -1,5 +1,5 @@
 import { useState } from "react";
-import dialer1 from "../../assets/dialer1.webp";
+// import dialer1 from "../../assets/dialer1.webp";
 
 const Dialer = () => {
   const [tabs, setTabs] = useState<number[]>([1, 0, 0, 0]);
