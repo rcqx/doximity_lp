@@ -1,5 +1,5 @@
 #main {
-  background-image: url("../assets/hero.webp");
+  background-image: url("../../assets/hero.webp");
   background-size: cover;
   -webkit-filter: brightness(0.95);
   filter: brightness(0.95);
