@@ -1,0 +1,14 @@
+#main {
+  background-image: url("../assets/hero.webp");
+  background-size: cover;
+  background-position: center;
+  background-position-y: -7.5em;
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+}
+
+#layer {
+  background: linear-gradient(to right, black, transparent);
+  opacity: 0.5;
+  z-index: -1;
+}
