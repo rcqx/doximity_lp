@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { SiWindows } from "react-icons/si";
 import { IoKey } from "react-icons/io5";
 import { BsList } from "react-icons/bs";
+import { Tooltip } from "react-tooltip";
 import Styles from "./hero.tailwind";
 import "./hero.css";
 
@@ -50,17 +51,37 @@ const Hero = () => {
               </div>
             </div>
             <div className={Styles.authWrapper}>
-              <div className={Styles.icon}>
+              <div
+                className={Styles.icon}
+                data-tooltip-id="apple"
+                data-tooltip-content="Apple"
+              >
                 <FaApple size="32" />
+                <Tooltip id="apple" />
               </div>
-              <div className={Styles.icon}>
+              <div
+                className={Styles.icon}
+                data-tooltip-id="google"
+                data-tooltip-content="Google"
+              >
                 <FcGoogle size="28" />
+                <Tooltip id="google" />
               </div>
-              <div className={Styles.icon}>
+              <div
+                className={Styles.icon}
+                data-tooltip-id="micro"
+                data-tooltip-content="Microsoft"
+              >
                 <SiWindows size="20" />
+                <Tooltip id="micro" />
               </div>
-              <div className={Styles.icon}>
+              <div
+                className={Styles.icon}
+                data-tooltip-id="sso"
+                data-tooltip-content="Hospital SSO"
+              >
                 <IoKey size="28" />
+                <Tooltip id="sso" />
               </div>
             </div>
             <p className={Styles.signin2}>
