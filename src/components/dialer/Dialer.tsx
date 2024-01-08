@@ -1,15 +1,42 @@
 import { useState } from "react";
-// import dialer1 from "../../assets/dialer1.webp";
+import DialerVideo from "./dialerVideo/DialerVideo";
+import { GoChevronLeft } from "react-icons/go";
+import { GoChevronRight } from "react-icons/go";
+import "./dialer.css";
 
 const Dialer = () => {
-  const [tabs, setTabs] = useState<number[]>([1, 0, 0, 0]);
-
+  const [tabs, setTabs] = useState([1, 0, 0, 0]);
   const tabsNames = ["Dialer Video", "Dialer Voice", "Search", "Fax"];
+  const next = (state: number[]) => {
+    if (state[state.length - 1] !== 1) {
+      const indexPosition = state.indexOf(1);
+      const aux = new Array(4).fill(0);
+      aux[indexPosition + 1] = 1;
+      setTabs(aux);
+    } else {
+      const aux = new Array(4).fill(0);
+      aux[0] = 1;
+      setTabs(aux);
+    }
+  };
+
+  const prev = (state: number[]) => {
+    if (state[0] !== 1) {
+      const indexPosition = state.indexOf(1);
+      const aux = new Array(4).fill(0);
+      aux[indexPosition - 1] = 1;
+      setTabs(aux);
+    } else {
+      const aux = new Array(4).fill(0);
+      aux[aux.length - 1] = 1;
+      setTabs(aux);
+    }
+  };
 
   return (
-    <div className="mt-[5.75em] mx-20 flex justify-center">
-      <div className="h-[500px] overflow-hidden w-full max-w-[76em]">
-        <nav className="flex justify-center">
+    <div className="mt-[5.75em] mx-20 flex justify-center relative">
+      <div className="h-[720px] overflow-hidden w-full max-w-[76em] flex flex-col items-center">
+        <nav className="flex justify-center w-full">
           <ul className="flex justify-between w-[65%]">
             {tabsNames.map((tabName, index) => (
               <li
@@ -34,11 +61,21 @@ const Dialer = () => {
             ))}
           </ul>
         </nav>
-        {/* <div className="h-full">
-          <aside className="flex h-full w-1/2 border border-green-600">
-            <img src={dialer1} alt="dialer-example-image" className="h-fit" />
-          </aside>
-        </div> */}
+        {tabs[0] > 0 && <DialerVideo />}
+      </div>
+      <div className="absolute left-10 top-1/2 cursor-pointer">
+        <GoChevronLeft
+          size={48}
+          className="text-slate-400"
+          onClick={() => prev(tabs)}
+        />
+      </div>
+      <div className="absolute right-10 top-1/2 cursor-pointer">
+        <GoChevronRight
+          size={48}
+          className="text-slate-400"
+          onClick={() => next(tabs)}
+        />
       </div>
     </div>
   );
