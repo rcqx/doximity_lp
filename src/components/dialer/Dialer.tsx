@@ -1,5 +1,9 @@
 import { useState } from "react";
-import DialerVideo from "./dialerVideo/DialerVideo";
+import DialerCard from "./dialerCard/DialerCard";
+import grandpa from "../../assets/dialer1.webp";
+import telemedicine from "../../assets/telemedicine.svg";
+import phoneNums from "../../assets/dialer2.webp";
+import mobileDialer from "../../assets/mobile-dialer.svg";
 import { GoChevronLeft } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
 import "./dialer.css";
@@ -33,6 +37,20 @@ const Dialer = () => {
     }
   };
 
+  const videoDesc = `
+    Dialer Video connects you to your patient through a no-reply text
+    message. Your cell number is kept private — you designate the callback
+    number. And it works with any smartphone. Your patient does not need
+    to download an app or create an account. With a simple tap,
+    you're practicing telemedicine.
+  `;
+
+  const voiceDesc = `
+  Your solution to calling patients on-the-go. A way for you to call patients
+  using your cell phone, while displaying your office number. Integration with
+  Epic's Haiku app allows you to call patients directly from their chart. No
+  longer do you have to sacrifice personal information for convenience`;
+
   return (
     <div className="mt-[5.75em] mx-20 flex justify-center relative">
       <div className="h-[720px] overflow-hidden w-full max-w-[76em] flex flex-col items-center">
@@ -61,8 +79,44 @@ const Dialer = () => {
             ))}
           </ul>
         </nav>
-        {tabs[0] > 0 && <DialerVideo />}
+        {tabs[0] > 0 && (
+          <DialerCard
+            image={grandpa}
+            icon={telemedicine}
+            title="The easiest way to reach your patients face-to-face."
+            desc={videoDesc}
+            learnMore={true}
+          />
+        )}
+        {tabs[1] > 0 && (
+          <DialerCard
+            image={phoneNums}
+            icon={mobileDialer}
+            title="Your solution to calling patients on-the-go."
+            desc={voiceDesc}
+            learnMore={false}
+          />
+        )}
+        {tabs[2] > 0 && (
+          <DialerCard
+            image={phoneNums}
+            icon={mobileDialer}
+            title="Your solution to calling patients on-the-go."
+            desc={voiceDesc}
+            learnMore={false}
+          />
+        )}
+        {tabs[3] > 0 && (
+          <DialerCard
+            image={phoneNums}
+            icon={mobileDialer}
+            title="Your solution to calling patients on-the-go."
+            desc={voiceDesc}
+            learnMore={false}
+          />
+        )}
       </div>
+
       <div className="absolute left-10 top-1/2 cursor-pointer">
         <GoChevronLeft
           size={48}
