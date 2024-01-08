@@ -16,16 +16,19 @@ const DialerCard = ({
   learnMore,
 }: DialerCardProps) => {
   return (
-    <div className="w-[70%] h-full flex gap-20">
+    <div className="w-[70%] h-full flex md:gap-20 flex-col lg:flex-row items-center border border-green-600">
       <aside
         id="device"
-        className="mt-6 w-[35%] flex items-center ml-4 relative"
+        className="mt-6 w-[35%] min-w-[300px] flex items-start lg:items-center ml-4 relative h-[23.75em] lg:h-[595px] max-h-[595px] overflow-hidden lg:overflow-visible"
       >
-        <img src={device} className="absolute" />
-        <img src={image} className="w-[89%] ml-[1.03em] mt-[0.15em]" />
+        <img src={device} className="absolute lg:h-full" />
+        <img
+          src={image}
+          className="ml-[1.04em] mt-[0.15em] lg:h-[95.5%] absolute top-3 -z-10"
+        />
       </aside>
-      <section className="flex-1 flex flex-col justify-center gap-5">
-        <img src={icon} className="w-[120px]" />
+      <section className="flex-1 flex flex-col justify-center gap-5 min-w-[455px] items-center lg:items-start">
+        <img src={icon} className="w-[120px] hidden lg:flex" />
         <h1 className="font-bold text-[1.9em] leading-10">{title}</h1>
         <p className="antialised leading-6">{desc}</p>
         <div className="flex items-center gap-10 mt-6">
