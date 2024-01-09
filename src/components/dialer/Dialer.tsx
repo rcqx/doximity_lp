@@ -62,10 +62,10 @@ const Dialer = () => {
   `;
 
   return (
-    <div className="mt-[5.75em] 2xl:mx-20 flex justify-center relative border border-red-600">
-      <div className="h-[720px] overflow-hidden w-full 2xl:max-w-[76em] flex flex-col items-center">
-        <nav className="flex justify-center w-full">
-          <ul className="flex justify-between lg:w-[60%] 2xl:w-[65%]">
+    <div className="sm:mt-[5.75em] 2xl:mx-20 flex justify-center relative">
+      <div className="sm:h-[840px] lg:h-[800px] overflow-hidden w-full 2xl:max-w-[76em] flex flex-col items-center border-b border-zinc-400">
+        <nav className="hidden sm:flex justify-center w-full">
+          <ul className="flex justify-between gap-3 lg:w-[60%] 2xl:w-[65%]">
             {tabsNames.map((tabName, index) => (
               <li
                 className="text-slate-700 px-4 py-2 rounded-2xl cursor-pointer antialiased select-none"
@@ -127,14 +127,14 @@ const Dialer = () => {
         )}
       </div>
 
-      <div className="absolute left-2 2xl:left-10 top-1/2 cursor-pointer z-10">
+      <div className="hidden sm:flex absolute left-2 2xl:left-10 top-1/2 cursor-pointer z-10">
         <GoChevronLeft
           size={48}
           className="text-slate-400"
           onClick={() => prev(tabs)}
         />
       </div>
-      <div className="absolute right-2 2xl:right-10 top-1/2 cursor-pointer z-10">
+      <div className="hidden sm:flex absolute right-2 2xl:right-10 top-1/2 cursor-pointer z-10">
         <GoChevronRight
           size={48}
           className="text-slate-400"
