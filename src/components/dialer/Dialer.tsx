@@ -10,7 +10,6 @@ import mobileDialer from "../../assets/mobile-dialer.svg";
 import mobileSearch from "../../assets/mobileSearch.svg";
 import { GoChevronLeft } from "react-icons/go";
 import { GoChevronRight } from "react-icons/go";
-import "./dialer.css";
 
 const Dialer = () => {
   const [tabs, setTabs] = useState([1, 0, 0, 0]);
@@ -63,7 +62,7 @@ const Dialer = () => {
 
   return (
     <div className="sm:mt-[5.75em] 2xl:mx-20 flex justify-center relative">
-      <div className="sm:h-[840px] lg:h-[800px] overflow-hidden w-full 2xl:max-w-[76em] flex flex-col items-center border-b border-zinc-400">
+      <div className="sm:h-[840px] lg:h-[800px] overflow-hidden w-full 2xl:max-w-[76em] flex flex-col items-center border-b border-zinc-200 pb-16 sm:pb-0">
         <nav className="hidden sm:flex justify-center w-full">
           <ul className="flex justify-between gap-3 lg:w-[60%] 2xl:w-[65%]">
             {tabsNames.map((tabName, index) => (
