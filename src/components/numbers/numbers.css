@@ -1,0 +1,18 @@
+/* #numbers {
+  background-image: url("../../assets/nurse.webp");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  z-index: -2;
+  display: hidden;
+} */
+
+#numbers-layer {
+  background: linear-gradient(#e0dfdb, #e0dfdb, #e0dfdb, transparent);
+  /* z-index: -1; */
+}
+
+@media (max-width: 570px) {
+  #numbers {
+    background-image: none;
+  }
+}
