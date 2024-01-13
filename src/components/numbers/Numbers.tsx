@@ -9,7 +9,7 @@ const Numbers = () => {
     >
       <div
         id="numbers-layer"
-        className="w-full h-[900px] lg:h-[750px] absolute top-0"
+        className="w-full sm:h-[900px] lg:h-[750px] absolute top-0"
       />
       <header className="mx-20 flex flex-col gap-3 z-20">
         <h1 className="text-[22px] md:text-[32px] font-bold tracking-wide text-center">
