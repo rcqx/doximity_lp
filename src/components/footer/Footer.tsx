@@ -28,28 +28,31 @@ const listThree = [
 
 const Footer = () => {
   const [about, setAbout] = useState(false);
+  const [clinicians, setClinicians] = useState(false);
+  const [partners, setPartners] = useState(false);
+
   return (
-    <footer className="flex flex-col py-[100px] lg:mx-20 xl:mx-[170px]">
-      <div className="hidden lg:flex h-[400px]">
-        <div className="xl:flex-1">
+    <footer className="flex flex-col py-10 lg:py-[100px] lg:mx-20 xl:mx-[170px]">
+      <div className="flex lg:h-[400px]">
+        <div className="xl:flex-1 w-full lg:w-fit flex lg:block justify-center pb-10 lg:pb-0">
           <img
             src={logo}
             alt="doximity-logo-icon"
             className="h-[40px] w-[40px] min-h-[40px] min-w-[40px]"
           />
         </div>
-        <div className="flex-1 flex ml-20">
-          <ul className="flex-1 flex flex-col gap-7 text-[15px] text-zinc-500">
+        <div className="flex-1 hidden lg:flex pl-20 xl:pl-0 text-zinc-700">
+          <ul className="flex-1 flex flex-col gap-7 text-[15px] ">
             {listOne.map((item: string) => (
               <li>{item}</li>
             ))}
           </ul>
-          <ul className="flex-1 flex flex-col gap-7 text-[15px] text-zinc-500">
+          <ul className="flex-1 flex flex-col gap-7 text-[15px] 2xl:ml-20 min-w-[150px]">
             {listTwo.map((item: string) => (
               <li>{item}</li>
             ))}
           </ul>
-          <ul className="flex-1 flex flex-col gap-7 text-[15px] text-zinc-500">
+          <ul className="flex-1 flex flex-col gap-7 text-[15px] 2xl:ml-20 min-w-[150px]">
             {listThree.map((item: string) => (
               <li>{item}</li>
             ))}
@@ -59,7 +62,7 @@ const Footer = () => {
 
       {/* Mobile footer */}
       <section>
-        <ul className="flex-1 flex flex-col gap-7 text-[15px] text-zinc-500 border-t border-zinc-300 py-5">
+        <ul className="flex-1 flex lg:hidden flex-col gap-7 text-[15px] text-zinc-500 border-t border-zinc-300 py-[16px]">
           <div
             className="flex justify-between text-black mx-6 cursor-pointer"
             onClick={() => setAbout(!about)}
@@ -74,8 +77,40 @@ const Footer = () => {
           </div>
         </ul>
       </section>
+      <section>
+        <ul className="flex-1 flex lg:hidden flex-col gap-7 text-[15px] text-zinc-500 border-t border-zinc-300 py-[16px]">
+          <div
+            className="flex justify-between text-black mx-6 cursor-pointer"
+            onClick={() => setClinicians(!clinicians)}
+          >
+            <h1 className="text-[17px]">CLINICIANS</h1>
+            <HiOutlineChevronDown size={24} />
+          </div>
+          <div className={`${clinicians ? "flex flex-col gap-5" : "hidden"}`}>
+            {listTwo.map((item: string) => (
+              <li className="mx-6 cursor-pointer w-fit">{item}</li>
+            ))}
+          </div>
+        </ul>
+      </section>
+      <section>
+        <ul className="flex-1 flex lg:hidden flex-col gap-7 text-[15px] text-zinc-500 border-t border-zinc-300 py-[16px]">
+          <div
+            className="flex justify-between text-black mx-6 cursor-pointer"
+            onClick={() => setPartners(!partners)}
+          >
+            <h1 className="text-[17px]">PARTNERS</h1>
+            <HiOutlineChevronDown size={24} />
+          </div>
+          <div className={`${partners ? "flex flex-col gap-5" : "hidden"}`}>
+            {listThree.map((item: string) => (
+              <li className="mx-6 cursor-pointer w-fit">{item}</li>
+            ))}
+          </div>
+        </ul>
+      </section>
 
-      <section className="flex justify-between py-8 border-t border-zinc-300">
+      <section className="flex justify-between py-8 border-t border-zinc-300 mx-6">
         <div className="flex flex-col items-center sm:justify-between w-full sm:flex-row">
           <span className="text-[15px] pb-5 sm:pb-0">
             © 2024 Doximity, Inc.
