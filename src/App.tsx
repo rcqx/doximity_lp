@@ -1,20 +1,10 @@
-import Hero from "./components/hero/Hero";
-import Dialer from "./components/dialer/Dialer.tsx";
-import Reviews from "./components/reviews/Reviews.tsx";
-import Network from "./components/network/Network.tsx";
-import Numbers from "./components/numbers/Numbers.tsx";
-import Footer from "./components/footer/Footer.tsx";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div>
-      <Hero />
-      <Dialer />
-      <Reviews />
-      <Network />
-      <Numbers />
-      <Footer />
-    </div>
+    <section>
+      <Home />
+    </section>
   );
 }
 
